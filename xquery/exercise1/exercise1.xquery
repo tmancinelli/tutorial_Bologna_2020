@@ -9,18 +9,18 @@ declare function local:applyTemplateHead($node as node()) as node()* {
 };
 
 
-declare function local:applyTemplates($nodes as node()*) as node()* {
-    for $node in $nodes
-    return
-        typeswitch ($node)
-            case element(tei:head)
-                return
-                    local:applyTemplateHead($node)
-            case element()
-                 return local:applyTemplates($node/node())
-            default
-                return $node
-};
+    declare function local:applyTemplates($nodes as node()*) as node()* {
+        for $node in $nodes
+        return
+            typeswitch ($node)
+                case element(tei:head)
+                    return
+                        local:applyTemplateHead($node)
+                case element()
+                     return local:applyTemplates($node/node())
+                default
+                    return $node
+    };
 
 let $root := doc("Frankenstein-v1c5-transcription.xml")
 
