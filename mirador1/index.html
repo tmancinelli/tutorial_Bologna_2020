@@ -1,18 +1,18 @@
 <script src="https://unpkg.com/mirador@beta/dist/mirador.min.js"></script>
 
-<div id="my-mirador"/> 
+<div id="my-mirador"/>
 
 <script type="text/javascript">
 var mirador = Mirador.viewer({
   "id": "my-mirador",
   "manifests": {
-    "https://iiif.lib.harvard.edu/manifests/drs:48309543": {
-      "provider": "Harvard University"
+    "manifest.json" : {
+      "provider": "IIIF Tutorial University of Bologna"
     }
   },
   "windows": [
     {
-      "loadedManifest": "https://iiif.lib.harvard.edu/manifests/drs:48309543",
+      "loadedManifest": "manifest.json",
       "canvasIndex": 2,
       "thumbnailNavigationPosition": 'far-bottom'
     }
